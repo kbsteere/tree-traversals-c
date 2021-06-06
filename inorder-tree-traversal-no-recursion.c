@@ -113,6 +113,16 @@ static tree_node_t *NewTreeNode(int data)
     return(new_tree_node);
 }
 
+static void PrintTree(tree_node_t *tree)
+{
+    printf("\n\n Tree Diagram\n");
+    printf("     %d\n", tree->data);
+    printf("    %c %c\n", 0x2f, 0x5c);
+    printf("   %d   %d\n", tree->left->data, tree->right->data);
+    printf(" %c  %c\n", 0x2f, 0x5c);
+    printf("%d    %d\n", tree->left->left->data, tree->left->right->data);
+}
+
 int main(int argc, char **argv)
 {
     tree_node_t *root = NewTreeNode(1);
@@ -122,7 +132,7 @@ int main(int argc, char **argv)
     root->left->right = NewTreeNode(5);
 
     InOrder(root);
-
-    getchar();
+    PrintTree(root);
+    
     return (0);
 };
