@@ -134,5 +134,6 @@ int main(int argc, char **argv)
     InOrder(root);
     PrintTree(root);
     
+    free(root);
     return (0);
 };
